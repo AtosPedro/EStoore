@@ -45,11 +45,6 @@ namespace EStoore.API.Controllers
         public async Task<IActionResult> Post([FromBody] CreateSupplierDto supplierDto)
         {
             var supplier = _mapper.Map<Supplier>(supplierDto);
-
-            supplier.CreatedAt = DateTime.Now;
-            supplier.CreatedBy = "Eu";
-            supplier.UpdatedAt = DateTime.Now;
-            supplier.UpdatedBy = "Eu";
             
             var any = await _supplierService.Add(supplier);
 

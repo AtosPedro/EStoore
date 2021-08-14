@@ -49,10 +49,6 @@ namespace EStoore.API.Controllers
         {
             var material = _mapper.Map<Material>(materialDto);
 
-            material.CreatedAt = DateTime.Now;
-            material.CreatedBy = "Eu";
-            material.UpdatedAt = DateTime.Now;
-            material.UpdatedBy = "Eu";
             var any = await _materialService.Add(material);
 
             if (any == null)

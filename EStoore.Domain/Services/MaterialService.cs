@@ -32,6 +32,10 @@ namespace EStoore.Domain.Services
             if (any)
                 return null;
 
+            material.CreatedAt = DateTime.Now;
+            material.CreatedBy = "Eu";
+
+
             await _materialRepository.Add(material);
             return material;
         }
@@ -41,6 +45,9 @@ namespace EStoore.Domain.Services
             bool any = _materialRepository.Search(m => m.Id == material.Id).Result.Any();
             if (!any)
                 return null;
+
+            material.UpdatedAt = DateTime.Now;
+            material.UpdatedBy = "Eu";
 
             await _materialRepository.Update(material);
             return material;

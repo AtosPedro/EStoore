@@ -9,6 +9,8 @@ namespace EStoore.Domain.DTOs.Material
 {
     public class UpdateMaterialDto
     {
+        [Required(ErrorMessage = "O material precisa ter um fornecedor")]
+        public int SupplierId { get; set; }
         [Required(ErrorMessage = "O material precisa ter um nome")]
         public string Name { get; set; }
         public string Description { get; set; }

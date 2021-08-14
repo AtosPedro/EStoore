@@ -32,15 +32,21 @@ namespace EStoore.Domain.Services
             if (any)
                 return null;
 
+            supplier.CreatedAt = DateTime.Now;
+            supplier.CreatedBy = "Eu";
+
             await _supplierRepository.Add(supplier);
             return supplier;
         }
 
         public async Task<Supplier> Update(Supplier supplier)
         {
-            bool any = _supplierRepository.Search(m => m.Name == supplier.Name).Result.Any();
+            bool any = _supplierRepository.Search(m => m.Id == supplier.Id).Result.Any();
             if (!any)
                 return null;
+
+            supplier.UpdatedAt = DateTime.Now;
+            supplier.UpdatedBy = "Eu";
 
             await _supplierRepository.Update(supplier);
             return supplier;
@@ -48,7 +54,7 @@ namespace EStoore.Domain.Services
 
         public async Task<bool> Remove(Supplier supplier)
         {
-            bool any = _supplierRepository.Search(m => m.Name == supplier.Name).Result.Any();
+            bool any = _supplierRepository.Search(m => m.Id == supplier.Id).Result.Any();
             if (!any)
                 return false;
 
