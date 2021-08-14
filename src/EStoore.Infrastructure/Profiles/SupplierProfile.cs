@@ -16,6 +16,7 @@ namespace EStoore.Infrastructure.Profiles
             CreateMap<Supplier, ReadSupplierDto>().ReverseMap();
             CreateMap<UpdateSupplierDto, Supplier>().ReverseMap();
             CreateMap<CreateSupplierDto, Supplier>().ReverseMap();
+            CreateMap<SupplierMaterialDto, Supplier>().ReverseMap();
         }
     }
 }

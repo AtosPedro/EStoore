@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EStoore.API", "EStoore.API\EStoore.API.csproj", "{263D228F-28F8-4721-8E88-484AFD17DFE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EStoore.API", "src\EStoore.API\EStoore.API.csproj", "{263D228F-28F8-4721-8E88-484AFD17DFE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EStoore.Domain", "EStoore.Domain\EStoore.Domain.csproj", "{971715A6-6FCC-41AF-88CC-A12485A3F509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EStoore.Domain", "src\EStoore.Domain\EStoore.Domain.csproj", "{971715A6-6FCC-41AF-88CC-A12485A3F509}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EStoore.Infrastructure", "EStoore.Infrastructure\EStoore.Infrastructure.csproj", "{644C90BD-0377-4869-A84B-8B8F4B76AC7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EStoore.Infrastructure", "src\EStoore.Infrastructure\EStoore.Infrastructure.csproj", "{644C90BD-0377-4869-A84B-8B8F4B76AC7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D56347DE-33CD-4A37-9EB6-709ABF093E9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
