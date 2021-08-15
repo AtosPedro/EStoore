@@ -44,6 +44,18 @@ namespace EStoore.API.Controllers
             return Ok(readMaterial);
         }
 
+        [HttpGet("get-material-by-name/{query}")]
+        public async Task<IActionResult> GetByName(string query)
+        {
+            var material = await _materialService.SerachMaterialsWithSupplier(query);
+
+            if (material == null)
+                return NotFound();
+
+            var readMaterial = _mapper.Map<ReadMaterialDto>(material.FirstOrDefault());
+            return Ok(readMaterial);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateMaterialDto materialDto)
         {
