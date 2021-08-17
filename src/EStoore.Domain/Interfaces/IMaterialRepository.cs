@@ -10,8 +10,8 @@ namespace EStoore.Domain.Interfaces
 {
     public interface IMaterialRepository : IRepository<Material>
     {
-        Task<IEnumerable<Material>> GetAll();
-        Task<Material> GetById(int id);
+        new Task<IEnumerable<Material>> GetAll();
+        new Task<Material> GetById(int id);
         Task<List<Material>> GetMaterialsBySupplier(int supplierId);
         Task<List<Material>> SerachMaterialsWithSupplier(string query);
     }

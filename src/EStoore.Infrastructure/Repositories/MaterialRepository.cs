@@ -30,13 +30,15 @@ namespace EStoore.Infrastructure.Repositories
 
         public async Task<List<Material>> GetMaterialsBySupplier(int supplierId)
         {
-            return await Context.Materials.AsNoTracking().Where(m => m.SupplierId == supplierId).ToListAsync();
+            return await Context.Materials.AsNoTracking()
+                .Where(m => m.SupplierId == supplierId)
+                .ToListAsync();
         }
 
         public async Task<List<Material>> SerachMaterialsWithSupplier(string query)
         {
             return await Context.Materials.AsNoTracking()
-                .Include(m => m.SupplierId)
+                .Include(m => m.Supplier)
                 .Where(m => m.Name == query ||
                         m.Description == query ||
                         m.Code == query ||
